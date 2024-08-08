@@ -1,23 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model CPW219_PriceQuotationApp.Models.Price
+
+@{
+    ViewData["Title"] = "PriceQuote";
 }
-<h1>Price Quotation</h1>
+
+<h1>PriceQuote</h1>
 <div>
-    <label>Subtotal: </label>
-    <input type="text" />
+    <div>
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+                <label asp-for="Subtotal"></label>
+                <input asp-for="Subtotal"/>
+                <span asp-validation-for="Subtotal"></span>
+            </div>
+            <div>
+                <label asp-for="DiscountPercent"></label>
+                <input asp-for="DiscountPercent" type="text"/>
+                <span asp-validation-for="DiscountPercent"></span>
+            </div>
+            <div>
+                <label asp-for="DiscountAmount"></label>
+                <input asp-for="DiscountAmount" readonly/>
+                <span asp-validation-for="DiscountAmount"></span>
+            </div>
+            <div>
+                <label asp-for="Total"></label>
+                <input asp-for="Total" readonly/>
+                <span asp-validation-for="Total"></span>              
+            </div>
+            <div>
+                <input type="submit" value="Calculate"/>
+                <a asp-action="Index">Clear</a>
+            </div>
+        </form>
+    </div>
 </div>
-<div>
-    <label>Discount percent: </label>
-    <input type="text" />
-</div>
-<div>
-    <label>Discount amount:</label>
-</div>
-<div>
-    <label>Total:</label>
-</div>
-<div>
-    <button>Calculate</button>
-    <p>Clear</p>
-</div>
+
 
