@@ -18,9 +18,10 @@ namespace CPW219_PriceQuotationApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(Price p)
         {
-            return View();
+            return View(p);           
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
