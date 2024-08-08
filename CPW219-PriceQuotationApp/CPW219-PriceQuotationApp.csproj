@@ -7,4 +7,8 @@
     <RootNamespace>CPW219_PriceQuotationApp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
+  </ItemGroup>
+
 </Project>
