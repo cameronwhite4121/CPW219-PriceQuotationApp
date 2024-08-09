@@ -8,15 +8,15 @@ namespace CPW219_PriceQuotationApp.Models
         /// <summary>
         /// Price before any discounts are applied
         /// </summary>
+        [Range(0.1, double.MaxValue, ErrorMessage = "Subtotal must be greater than 0")]
         [Required]
-        [Range(0, double.MaxValue)]
         public double Subtotal { get; set; }
 
         /// <summary>
         /// Percentage of subtotal that is discounted (0-100)
         /// </summary>
+        [Range(0, 100, ErrorMessage = "Discount percent MUST be an integer 0 - 100")]
         [Required]
-        [Range(0, 100)]
         public int DiscountPercent { get; set; }
 
         /// <summary>

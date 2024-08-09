@@ -12,16 +12,22 @@ namespace CPW219_PriceQuotationApp.Controllers
         {
             _logger = logger;
         }
-
+        Price defaultPrice = new();
         public IActionResult Index()
         {
-            return View();
+            
+            return View(defaultPrice);
+
         }
 
         [HttpPost]
         public IActionResult Index(Price p)
         {
-            return View(p);           
+            if (ModelState.IsValid)
+            {
+                return View(p);
+            }
+            return View(defaultPrice);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
