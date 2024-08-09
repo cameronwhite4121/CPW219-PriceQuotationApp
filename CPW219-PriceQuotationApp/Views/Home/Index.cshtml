@@ -4,32 +4,32 @@
     ViewData["Title"] = "PriceQuote";
 }
 
-<h1>PriceQuote</h1>
+<h1 class="header">Price Quotation</h1>
 <div>
     <div>
         <form asp-action="Index">
             <div asp-validation-summary="ModelOnly"></div>
             <div>
-                <label asp-for="Subtotal"></label>
-                <input asp-for="Subtotal"/>
+                <label class="column1">Subtotal:</label>
+                <input asp-for="Subtotal" value="" class="column2"/>
                 <span asp-validation-for="Subtotal"></span>
             </div>
             <div>
-                <label asp-for="DiscountPercent"></label>
-                <input asp-for="DiscountPercent" type="text"/>
+                <label class="column1">Discount percent:</label>
+                <input asp-for="DiscountPercent" type="text" value="" class="column2"/>
                 <span asp-validation-for="DiscountPercent"></span>
             </div>
             <div>
-                <label asp-for="DiscountAmount"></label>
-                <input asp-for="DiscountAmount" readonly/>
+                <label class="column1">Discount amount:</label>
+                <span class="column2">@Model.DiscountAmount.ToString("C")</span>
                 <span asp-validation-for="DiscountAmount"></span>
             </div>
             <div>
-                <label asp-for="Total"></label>
-                <input asp-for="Total" readonly/>
+                <label class="column1">Total:</label>
+                <span class="column2">@Model.Total.ToString("C")</span>
                 <span asp-validation-for="Total"></span>              
             </div>
-            <div>
+            <div class ="column1">
                 <input type="submit" value="Calculate"/>
                 <a asp-action="Index">Clear</a>
             </div>
